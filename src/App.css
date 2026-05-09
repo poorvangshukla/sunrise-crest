@@ -1,0 +1,386 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   THEME CSS VARIABLES
+   ============================================= */
+
+:root {
+  /* Dark theme (default) */
+  --bg-primary: #0F1011;
+  --bg-secondary: #151617;
+  --bg-card: #1D1E1F;
+  --bg-card-hover: #242526;
+  --text-primary: #F0F4EF;
+  --text-secondary: rgba(255, 255, 255, 0.88);
+  --text-muted: #7D7E7F;
+  --border: #3F4041;
+  --border-hover: #F0F4EF;
+  --accent: #F0F4EF;
+  --accent-text: #0F1011;
+  --menu-left-bg: #f0f4ef;
+  --menu-right-bg: #212529;
+  --menu-link-number: #7D7E7F;
+  --menu-link-text: #6c757d;
+  --menu-link-hover-bg: rgba(108, 117, 125, 0.5);
+  --menu-link-underline: #fff;
+  --menu-line-color: #2E2F32E0;
+  --menu-contact-title: rgba(255,255,255,0.88);
+  --shadow-gradient-start: rgb(15, 16, 17);
+  --shadow-gradient-mid: rgba(16, 17, 18, 0.71);
+  --shadow-gradient-end: rgba(15, 16, 17, 0);
+  --product-img-bg: #1a1b1c;
+  --product-img-gradient-from: #2a2b2c;
+  --product-img-gradient-to: #1a1b1c;
+  --step-active-bg: #F0F4EF;
+  --step-active-text: #0F1011;
+  --step-inactive-border: #3F4041;
+  --quote-summary-bg: #151617;
+  --toggle-track-off: rgba(255,255,255,0.2);
+  --toggle-track-on: #C9A84C;
+  --toggle-thumb: #fff;
+  --toggle-label: rgba(255,255,255,0.6);
+  --cool-link-color: #fff;
+  --cool-link-underline: #fff;
+  --navbar-icon-fill: rgb(255,255,255,0.88);
+}
+
+[data-theme="light"] {
+  --bg-primary: #FAFAF8;
+  --bg-secondary: #F0EDE4;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F5F0E8;
+  --text-primary: #0F1011;
+  --text-secondary: #2A2A2A;
+  --text-muted: #6B6B6B;
+  --border: #D4C9A8;
+  --border-hover: #C9A84C;
+  --accent: #C9A84C;
+  --accent-text: #FAFAF8;
+  --menu-left-bg: #FFFFF8;
+  --menu-right-bg: #212529;
+  --menu-link-number: #8A7A5A;
+  --menu-link-text: #5A4A2A;
+  --menu-link-hover-bg: rgba(201, 168, 76, 0.2);
+  --menu-link-underline: #C9A84C;
+  --menu-line-color: #D4C9A8;
+  --menu-contact-title: rgba(201, 168, 76, 0.9);
+  --shadow-gradient-start: rgb(250, 250, 248);
+  --shadow-gradient-mid: rgba(250, 250, 248, 0.71);
+  --shadow-gradient-end: rgba(250, 250, 248, 0);
+  --product-img-bg: #F5F0E4;
+  --product-img-gradient-from: #E8E0CC;
+  --product-img-gradient-to: #F5F0E4;
+  --step-active-bg: #C9A84C;
+  --step-active-text: #FAFAF8;
+  --step-inactive-border: #D4C9A8;
+  --quote-summary-bg: #F0EDE4;
+  --toggle-track-off: rgba(201,168,76,0.25);
+  --toggle-track-on: #C9A84C;
+  --toggle-thumb: #fff;
+  --toggle-label: rgba(15,16,17,0.55);
+  --cool-link-color: #0F1011;
+  --cool-link-underline: #C9A84C;
+  --navbar-icon-fill: rgb(15,16,17,0.88);
+}
+
+/* =============================================
+   FONT
+   ============================================= */
+
+@font-face {
+    font-family: 'Main';
+    src: url('./assets/Font/ArrivalApercuMonoPro-Regular.woff2') format('woff2');
+}
+
+body {
+    font-family: 'Main';
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    cursor: none;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a {
+  cursor: none;
+}
+
+/* =============================================
+   COOL LINK
+   ============================================= */
+
+.cool-link {
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  color: var(--cool-link-color);
+  transition: color 0.4s ease;
+}
+
+.cool-link::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 1px;
+  background: var(--cool-link-underline);
+  transition: width 0.3s, background 0.4s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.cool-link:hover::after {
+  width: 100%;
+}
+
+/* =============================================
+   LOADING ANIMATION
+   ============================================= */
+
+@keyframes loading {
+    0% { background-size: 0% 100%; }
+    100% { background-size: 100% 100%; }
+}
+  
+.animate-loading {
+    animation: loading 5s linear infinite;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+}
+
+/* =============================================
+   SHADOW OVERLAYS (use CSS vars for theme)
+   ============================================= */
+
+.upperShadow {
+    background: linear-gradient(var(--shadow-gradient-start) 0%, var(--shadow-gradient-mid) 31.25%, var(--shadow-gradient-end) 100%);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 240px;
+    width: 100%;
+    z-index: 0;
+    transition: background 0.4s ease;
+}
+
+.leftShadow {
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    height: 100%;
+    background: linear-gradient(90deg, var(--shadow-gradient-start) 0%, var(--shadow-gradient-mid) 31.25%, var(--shadow-gradient-end) 100%);
+    max-width: 50%;
+    width: 645px;
+    z-index: 0;
+    transition: background 0.4s ease;
+}
+
+.rightShadow {
+    position: absolute;
+    right: -1px;
+    top: 0px;
+    height: 100%;
+    background: linear-gradient(90deg, var(--shadow-gradient-end) 0%, var(--shadow-gradient-mid) 31.25%, var(--shadow-gradient-start) 100%);
+    max-width: 50%;
+    width: 645px;
+    z-index: 0;
+    transition: background 0.4s ease;
+}
+
+.bottomShadow {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(0deg, var(--shadow-gradient-start) 0%, var(--shadow-gradient-mid) 31.25%, var(--shadow-gradient-end) 100%);
+    transition: background 0.4s ease;
+}
+
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+
+.kmoIMz {
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+/* =============================================
+   HOVER EFFECTS
+   ============================================= */
+
+.coolHover:hover ~ .coolImg {
+  transform: scale(1.5);
+  transition: all 2s ease-in-out;
+  cursor: pointer;
+}
+
+/* =============================================
+   THEME TOGGLE SWITCH
+   ============================================= */
+
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.theme-toggle-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--toggle-label);
+  transition: color 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.theme-toggle-switch {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.theme-toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--toggle-track-off);
+  border-radius: 9999px;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+.theme-toggle-switch input:checked + .theme-toggle-track {
+  background: var(--toggle-track-on);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.5);
+  border-color: #C9A84C;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--toggle-thumb);
+  border-radius: 50%;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.theme-toggle-switch input:checked + .theme-toggle-track + .theme-toggle-thumb {
+  transform: translateX(24px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2), 0 0 8px rgba(201,168,76,0.4);
+}
+
+/* =============================================
+   CURSOR & INTERACTION FIXES
+   ============================================= */
+
+input,
+textarea,
+select {
+  cursor: text !important;
+}
+
+button,
+button *,
+a,
+a * {
+  cursor: pointer !important;
+}
+
+select {
+  cursor: pointer !important;
+}
+
+/* =============================================
+   FOCUS STYLES (ACCESSIBILITY)
+   ============================================= */
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+a:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   MISC
+   ============================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

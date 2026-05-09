@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private sections if they exist in the future
+# Disallow: /admin/
+
+# Sitemap
+Sitemap: https://rjfoodstuff.com/sitemap.xml
