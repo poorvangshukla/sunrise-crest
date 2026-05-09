@@ -362,11 +362,11 @@ const Menu = forwardRef((props, ref) => {
             <div className="  flex flex-col gap-8  ">
               <div className="overflow-hidden">
                 <p className="text-[1.5rem] text uppercase ">Email</p>
-                <p className="cool-link text ">atulrathour888@gmail.com</p>
+                <p className="cool-link text ">poorvang.shukls@gmail.com</p>
               </div>
               <div className="overflow-hidden">
                 <p className="text text-[1.5rem] uppercase ">Phone</p>
-                <p className="text cool-link">+91 63521 60172</p>
+                <p className="text cool-link">+91 7016302635</p>
               </div>
               <div className="overflow-hidden">
                 <p className="text text-[1.5rem] uppercase  mb-2 ">Social</p>
