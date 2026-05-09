@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { productsData } from '../data/productsData';
-import SEO from '../components/SEO';
+import SEO from '../Components/SEO';
 
 const Quote = () => {
   const location = useLocation();

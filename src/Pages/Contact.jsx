@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import SEO from '../components/SEO';
+import SEO from '../Components/SEO';
 
 const Contact = () => {
   const heroRef = useRef(null);

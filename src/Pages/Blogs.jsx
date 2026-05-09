@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { blogsData } from '../data/blogsData';
-import SEO from '../components/SEO';
+import SEO from '../Components/SEO';
 
 const Blogs = () => {
   const [currentPage, setCurrentPage] = useState(1);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import PageTransition from '../components/PageTransition';
+import PageTransition from '../Components/PageTransition';
 import { blogsData } from '../data/blogsData';
-import SEO from '../components/SEO';
+import SEO from '../Components/SEO';
 
 const BlogPost = () => {
     const { slug } = useParams();

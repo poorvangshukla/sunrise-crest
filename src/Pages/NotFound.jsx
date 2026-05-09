@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PageTransition from '../components/PageTransition';
-import SEO from '../components/SEO';
+import PageTransition from '../Components/PageTransition';
+import SEO from '../Components/SEO';
 
 const NotFound = () => {
     return (

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SEO from '../components/SEO';
+import SEO from '../Components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { productsData, categories } from '../data/productsData';
-import SEO from '../components/SEO';
+import SEO from '../Components/SEO';
 
 const Products = () => {
   const [activeFilter, setActiveFilter] = useState('All');
