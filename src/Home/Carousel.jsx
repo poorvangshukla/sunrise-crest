@@ -4,7 +4,7 @@ import Img1 from "../assets/images/Page1/img1.webp";
 import Img2 from "../assets/images/Page1/main page.webp";
 import Img3 from "../assets/images/Page1/stearing.webp";
 import Img4 from "../assets/images/Page1/trial-hero-1x.webp";
-import Vid1 from '../assets/videos/trains cargo.mp4';
+import Vid1 from '../assets/videos/big cargo ship.mp4';
 
 const ImageCarousel = () => {
   const carouselArray = [

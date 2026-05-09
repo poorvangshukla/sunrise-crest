@@ -13,8 +13,8 @@ import NotFound from "./Pages/NotFound";
 import Navbar from "./Components/Navbar";
 import Intro from "./Components/Intro";
 import Cursor from "./Components/Cursor/Cursor";
-import ScrollToTop from "./components/ScrollToTop";
-import PageTransition from "./components/PageTransition";
+import ScrollToTop from "./Components/ScrollToTop";
+import PageTransition from "./Components/PageTransition";
 
 const App = () => {
   const [isLoading, setIsloading] = useState(true);
