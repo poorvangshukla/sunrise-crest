@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Footer from "./Components/Footer";
 import "./App.css";
 import Home from "./Pages/Home";
@@ -54,6 +55,7 @@ const App = () => {
             <Cursor />
             <Navbar handleOpen={handleOpen} />
             <ScrollToTop />
+            <Analytics />
 
             <Routes>
               <Route path="/" element={
