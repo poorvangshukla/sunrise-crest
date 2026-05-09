@@ -270,11 +270,11 @@ const Navbar = ({ handleOpen }) => {
               <div className="flex flex-col gap-8">
                 <div className="overflow-hidden">
                   <p className="text-[1.5rem] text uppercase" style={{ color: 'var(--menu-contact-title)' }}>Email</p>
-                  <p className="cool-link text">atulrathour888@gmail.com</p>
+                  <p className="cool-link text">poorvang.shukls@gmail.com</p>
                 </div>
                 <div className="overflow-hidden">
                   <p className="text text-[1.5rem] uppercase" style={{ color: 'var(--menu-contact-title)' }}>Phone</p>
-                  <p className="text cool-link">+91 63521 60172</p>
+                  <p className="text cool-link">+91 7016302635</p>
                 </div>
                 <div className="overflow-hidden">
                   <p className="text text-[1.5rem] uppercase mb-2" style={{ color: 'var(--menu-contact-title)' }}>Social</p>
@@ -292,7 +292,7 @@ const Navbar = ({ handleOpen }) => {
                 </div>
                 <div className="overflow-hidden">
                   <p className="text text-[1.5rem] uppercase" style={{ color: 'var(--menu-contact-title)' }}>Appointment</p>
-                  <p className="text cool-link">+91 95681 60172</p>
+                  <p className="text cool-link">+91 7016302635</p>
                 </div>
                 <div className="overflow-hidden">
                   <p className="text-[1.5rem] text uppercase mb-2" style={{ color: 'var(--menu-contact-title)' }}>Legal</p>

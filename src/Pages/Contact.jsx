@@ -90,7 +90,7 @@ const Contact = () => {
               <div className="space-y-8">
                 {[
                   { title: 'Office Address', content: '1-1-2 Oshiage, Sumida City\n131-0045, Tokyo, Japan' },
-                  { title: 'Email', content: 'atulrathour888@gmail.com', isLink: true, href: 'mailto:atulrathour888@gmail.com' },
+                  { title: 'Email', content: 'poorvang.shukls@gmail.com', isLink: true, href: 'mailto:poorvang.shukls@gmail.com' },
                   { title: 'Phone', content: null, isPhone: true },
                   { title: 'Business Hours', content: 'Monday - Friday: 9:00 AM - 6:00 PM JST\nSaturday: 10:00 AM - 4:00 PM JST\nSunday: Closed' },
                 ].map(({ title, content, isLink, href, isPhone }) => (
@@ -98,8 +98,8 @@ const Contact = () => {
                     <h3 className="text-xl font-bold mb-3">{title}</h3>
                     {isPhone ? (
                       <p style={{ color: 'var(--text-muted)' }}>
-                        General: <a href="tel:+916352160172" className="transition-colors" style={{ color: 'var(--text-muted)' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>+91 63521 60172</a><br />
-                        Appointments: <a href="tel:+919568160172" className="transition-colors" style={{ color: 'var(--text-muted)' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>+91 95681 60172</a>
+                        General: <a href="tel:+917016302635" className="transition-colors" style={{ color: 'var(--text-muted)' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>+91 7016302635</a><br />
+                        Appointments: <a href="tel:+917016302635" className="transition-colors" style={{ color: 'var(--text-muted)' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>+91 7016302635</a>
                       </p>
                     ) : isLink ? (
                       <a href={href} className="transition-colors" style={{ color: 'var(--text-muted)' }}

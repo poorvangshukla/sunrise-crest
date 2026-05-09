@@ -392,7 +392,7 @@ const Menu = forwardRef((props, ref) => {
               </div>
               <div className="overflow-hidden">
                 <p className="text text-[1.5rem] uppercase ">Appointment </p>
-                <p className="text cool-link">+91 95681 60172</p>
+                <p className="text cool-link">+91 7016302635</p>
               </div>
               <div className="overflow-hidden">
                 <p className="text-[1.5rem] text uppercase  mb-2 ">Legal</p>
