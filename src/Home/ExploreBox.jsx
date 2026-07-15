@@ -27,7 +27,7 @@ const ExploreBox = () => {
             />
           </div>
           <section
-            className="h-[120px] lg:h-[150px] border-l-[0.5px] transition-colors duration-400"
+            className="min-h-[100px] border-l-[0.5px] transition-colors duration-400 pb-4"
             style={{ borderColor: 'var(--border)' }}
           >
             <div

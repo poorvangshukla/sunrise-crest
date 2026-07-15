@@ -52,10 +52,10 @@ const About = () => {
       />
 
       {/* Hero */}
-      <section className="min-h-screen flex items-center justify-center px-4 pt-32 pb-20">
+      <section className="min-h-[80vh] flex items-center justify-center px-4 pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-20">
         <div ref={heroRef} className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">About Sunrise Crest</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8" style={{ color: 'var(--text-muted)' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6">About Sunrise Crest</h1>
+          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-8" style={{ color: 'var(--text-muted)' }}>
             Connecting continents through quality food trading since 2022
           </p>
           <div className="h-[1px] w-32 mx-auto" style={{ backgroundColor: 'var(--accent)' }} />
@@ -63,9 +63,9 @@ const About = () => {
       </section>
 
       {/* Story */}
-      <section ref={storyRef} className="py-20 px-4">
+      <section ref={storyRef} className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12">Our Story</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8 sm:mb-12">Our Story</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold mb-4">Established 2022</h3>
@@ -90,7 +90,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 px-4" style={{ backgroundColor: 'var(--bg-secondary)', transition: 'background-color 0.4s ease' }}>
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-secondary)', transition: 'background-color 0.4s ease' }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div ref={missionRef} className="p-8" style={{ border: '1px solid var(--border)', transition: 'border-color 0.4s ease' }}>
@@ -126,9 +126,9 @@ const About = () => {
       </section>
 
       {/* Global Trade Presence */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Global Trade Network</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8 sm:mb-12 text-center">Global Trade Network</h2>
           <p className="text-center mb-16 max-w-3xl mx-auto" style={{ color: 'var(--text-muted)' }}>
             From our Tokyo headquarters, we facilitate trade across continents, connecting premium suppliers with quality-conscious markets worldwide.
           </p>
@@ -188,9 +188,9 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-4">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Trading?</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-6">Ready to Start Trading?</h2>
           <p className="text-xl mb-12" style={{ color: 'var(--text-muted)' }}>
             Partner with Sunrise Crest for reliable, quality-focused food trade solutions
           </p>

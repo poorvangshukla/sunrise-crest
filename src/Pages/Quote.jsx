@@ -99,7 +99,7 @@ const Quote = () => {
 
   return (
     <div
-      className="min-h-screen pt-32 pb-20 px-4"
+      className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-20 px-4"
       style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', transition: 'background-color 0.4s ease, color 0.4s ease' }}
     >
       <SEO
@@ -110,7 +110,7 @@ const Quote = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Request a Quote</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Request a Quote</h1>
           <p style={{ color: 'var(--text-muted)' }}>Get a competitive quote for your requirements</p>
         </div>
 

@@ -8,31 +8,31 @@ const Banner = () => {
 
   return (
     <div
-      className="overflow-hidden group mb-10 transition-colors duration-400"
+      className="overflow-hidden group mb-6 sm:mb-10 transition-colors duration-400"
       style={{ backgroundColor: 'var(--bg-card)' }}
     >
       <div className="relative flex w-full">
-        <div className="wrapper animate-marquee group-hover:animation-pause flex items-center whitespace-nowrap pt-5 pb-5">
+        <div className="wrapper animate-marquee group-hover:animation-pause flex items-center whitespace-nowrap py-4 sm:py-5">
           {repeatedContent.map((item, index) => (
             <React.Fragment key={index}>
               <span
-                className="uppercase text-[1.5rem] mx-12 transition-colors duration-400"
+                className="marquee-text uppercase text-base sm:text-[1.3rem] lg:text-[1.5rem] mx-6 sm:mx-10 lg:mx-12 transition-colors duration-400"
                 style={{ color: 'var(--text-secondary)' }}
               >{item}</span>
-              <span className="mx-12" style={{ color: 'var(--text-muted)' }}>-</span>
+              <span className="mx-6 sm:mx-10 lg:mx-12" style={{ color: 'var(--text-muted)' }}>-</span>
             </React.Fragment>
           ))}
         </div>
 
         {/* Duplicate for seamless loop */}
-        <div className="wrapper2 absolute top-0 flex items-center whitespace-nowrap animate-marquee2 group-hover:animation-pause pt-5 pb-5">
+        <div className="wrapper2 absolute top-0 flex items-center whitespace-nowrap animate-marquee2 group-hover:animation-pause py-4 sm:py-5">
           {repeatedContent.map((item, index) => (
             <React.Fragment key={`duplicate-${index}`}>
               <span
-                className="uppercase text-[1.5rem] mx-12 transition-colors duration-400"
+                className="marquee-text uppercase text-base sm:text-[1.3rem] lg:text-[1.5rem] mx-6 sm:mx-10 lg:mx-12 transition-colors duration-400"
                 style={{ color: 'var(--text-secondary)' }}
               >{item}</span>
-              <span className="mx-12" style={{ color: 'var(--text-muted)' }}>-</span>
+              <span className="mx-6 sm:mx-10 lg:mx-12" style={{ color: 'var(--text-muted)' }}>-</span>
             </React.Fragment>
           ))}
         </div>

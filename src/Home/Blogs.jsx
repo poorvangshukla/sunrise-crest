@@ -7,41 +7,59 @@ import LocomotiveImage from "../Components/LocomotiveImage";
 const Blogs = () => {
   return (
     <div
-      className="flex mobile:flex-col lg:flex-row w-[100vw] lg:h-[100vh] mobile:h-[200vh] ps-10 pe-10 mt-[20rem] mb-[10rem] overflow-hidden"
+      className="flex flex-col lg:flex-row w-full px-6 sm:px-10 mt-[8rem] sm:mt-[12rem] lg:mt-[20rem] mb-[4rem] sm:mb-[6rem] lg:mb-[10rem] overflow-hidden gap-8 lg:gap-0"
       style={{ color: 'var(--text-primary)', transition: 'color 0.4s ease' }}
     >
-      <div className="h-full flex lg:w-[25%] mobile:w-[100%] pt-20 justify-between mobile:items-center lg:items-start flex-col gap-[2rem]">
-        <div className="ms-2">
-          <div className="w-[200px] h-auto mb-4">
-            <img src={Logo} className="w-full h-auto object-contain" alt="Sunrise Crest" />
+      {/* Left — branding + headline */}
+      <div className="flex lg:h-full lg:w-[25%] w-full pt-6 lg:pt-20 justify-between items-start lg:items-start flex-col gap-6 lg:gap-[2rem]">
+        <div className="ms-0 sm:ms-2">
+          <div className="w-[160px] sm:w-[200px] h-auto mb-3 sm:mb-4">
+            <img
+              src={Logo}
+              className="logo-themed w-full h-auto object-contain"
+              alt="Sunrise Crest"
+            />
           </div>
-          <p className="text-[1.5rem] transition-colors duration-400" style={{ color: 'var(--text-secondary)' }}>TRADITION</p>
+          <p
+            className="text-[1.2rem] sm:text-[1.5rem] transition-colors duration-400"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            TRADITION
+          </p>
         </div>
-        <div className="text-[2.5rem] transition-colors duration-400" style={{ color: 'var(--text-secondary)' }}>
+        <div
+          className="text-[1.8rem] sm:text-[2rem] lg:text-[2.5rem] leading-snug transition-colors duration-400"
+          style={{ color: 'var(--text-secondary)' }}
+        >
           The World of Trade, One Story at a Time.
         </div>
       </div>
 
-      <div className="h-[95%] lg:w-[45%] mobile:w-[100%]">
+      {/* Center — hero image */}
+      <div className="w-full lg:w-[45%] h-[280px] sm:h-[380px] lg:h-[95%]">
         <LocomotiveImage Image={Flight} />
       </div>
 
-      <div className="flex flex-col justify-between items-end lg:pt-[10rem] mobile:pt-10 lg:w-[30%] mobile:w-[100%] h-full ps-5 pe-5">
-        <div className="lg:ps-10 lg:pe-10 mobile:ps-5 mobile:pe-5 transition-colors duration-400" style={{ color: 'var(--text-muted)' }}>
-          <p className="mb-10">
+      {/* Right — description + second image */}
+      <div className="flex flex-col justify-between items-start lg:items-end lg:pt-[10rem] pt-4 lg:w-[30%] w-full h-full px-0 sm:px-5 gap-6 lg:gap-0">
+        <div
+          className="transition-colors duration-400"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          <p className="mb-6 sm:mb-10 text-sm sm:text-base leading-relaxed">
             Explore our latest articles to navigate the complexities of
             international commerce and expand your business.
           </p>
           <a
             href=""
-            className="rounded-sm pt-2 pb-2 pe-3 ps-3 transition-colors duration-400"
+            className="rounded-sm pt-2 pb-2 pe-4 ps-4 text-sm sm:text-base transition-colors duration-400"
             style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-secondary)' }}
           >
             Blogs
           </a>
         </div>
 
-        <div className="w-[310px] h-[250px]">
+        <div className="w-full sm:w-[310px] h-[200px] sm:h-[250px] mt-6 lg:mt-0">
           <LocomotiveImage Image={company} />
         </div>
       </div>

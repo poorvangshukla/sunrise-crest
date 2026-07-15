@@ -9,6 +9,27 @@ import gsap from "gsap";
 import './Menu.css'
 import { useTheme } from "../context/ThemeContext";
 
+/* ─── Professional SVG Icons ──────────────────────────── */
+const SunIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="5" />
+    <line x1="12" y1="1" x2="12" y2="3" />
+    <line x1="12" y1="21" x2="12" y2="23" />
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+    <line x1="1" y1="12" x2="3" y2="12" />
+    <line x1="21" y1="12" x2="23" y2="12" />
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+  </svg>
+);
+
+const MoonIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+);
+
 const Navbar = ({ handleOpen }) => {
   const timelineRef = useRef(null);
   const { isDark, toggleTheme } = useTheme();
@@ -65,23 +86,37 @@ const Navbar = ({ handleOpen }) => {
     timelineRef.current.reverse();
   };
 
-  const iconFill = isDark ? "rgb(255,255,255,0.88)" : "rgb(15,16,17,0.88)";
+  const iconFill = isDark ? "rgb(255,255,255,0.88)" : "rgb(13,13,13,0.88)";
 
   return (
     <>
       {/* ── TOPBAR ── */}
       <div
-        className="fixed flex nav w-[100vw] justify-between ps-10 lg:pe-20 mobile:pe-5 pt-5 pb-5 border-[#3F4041] z-[100]"
+        className="fixed flex nav w-full justify-between px-4 sm:px-8 lg:px-10 pt-4 pb-4 border-b z-[100]"
         role="navigation"
         aria-label="Main navigation"
-        style={{ transition: 'background-color 0.4s ease' }}
+        style={{
+          borderBottomColor: 'var(--navbar-border)',
+          transition: 'background-color 0.4s ease, border-color 0.4s ease',
+        }}
       >
-        <Link to="/" className="logo w-[150px] sm:w-[180px] h-auto flex items-center link" aria-label="Sunrise Crest - Home">
-          <img src={TransLogo} className="w-full h-auto max-h-[80px] object-contain" alt="Sunrise Crest Logo" />
+        {/* Logo */}
+        <Link
+          to="/"
+          className="logo w-[160px] sm:w-[200px] lg:w-[220px] h-auto flex items-center link"
+          aria-label="Sunrise Crest - Home"
+        >
+          <img
+            src={TransLogo}
+            className="logo-themed w-full h-auto max-h-[70px] object-contain"
+            alt="Sunrise Crest Logo"
+          />
         </Link>
 
-        <div className="flex items-center" style={{ color: 'var(--text-secondary)' }}>
-          <div>EST-2022</div>
+        <div className="flex items-center gap-4 sm:gap-6" style={{ color: 'var(--text-secondary)' }}>
+          <div className="hidden sm:block text-xs tracking-widest" style={{ color: 'var(--text-muted)' }}>
+            EST-2022
+          </div>
 
           <div>
             <a className="menu link" onClick={openMenu}>
@@ -89,7 +124,7 @@ const Navbar = ({ handleOpen }) => {
                 <div className="main">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"
                     preserveAspectRatio="xMidYMid meet"
-                    style={{ width: "17px", height: "17px", transform: "translate3d(0px, 0px, 0px)" }}>
+                    style={{ width: "18px", height: "18px", transform: "translate3d(0px, 0px, 0px)" }}>
                     <defs><clipPath id="__lottie_element_2"><rect width="16" height="16" x="0" y="0"></rect></clipPath></defs>
                     <g clipPath="url(#__lottie_element_2)">
                       <g transform="matrix(1,0,0,1,0.0000057220458984375,1.0000076293945312)" opacity="1" style={{ display: "block" }}>
@@ -116,7 +151,7 @@ const Navbar = ({ handleOpen }) => {
                 <div className="overlay">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"
                     preserveAspectRatio="xMidYMid meet"
-                    style={{ width: "17px", height: "17px", transform: "translate3d(0px, 0px, 0px)" }}>
+                    style={{ width: "18px", height: "18px", transform: "translate3d(0px, 0px, 0px)" }}>
                     <defs><clipPath id="__lottie_element_2b"><rect width="16" height="16" x="0" y="0"></rect></clipPath></defs>
                     <g clipPath="url(#__lottie_element_2b)">
                       <g transform="matrix(1,0,0,1,0.0000057220458984375,1.0000076293945312)" opacity="1" style={{ display: "block" }}>
@@ -134,7 +169,7 @@ const Navbar = ({ handleOpen }) => {
                       <g transform="matrix(1,0,0,1,0,1.0000061988830566)" opacity="1" style={{ display: " block" }}>
                         <g opacity="1" transform="matrix(1,0,0,1,8,1)">
                           <path className="line1" fill={iconFill} fillOpacity="1"
-                            d=" M-8.00100040435791,1.0010000467300415 C-8.00100040435791,1.0010000467300415 0.9990000128746033,1.0010000467300415 0.9990000128746033,1.0010000467300415 C0.9990000128746033,1.0010000467300415 0.9990000128746033,-1.0010000467300415 0.9990000128746033,-1.0010000467300415 C0.9990000128746033,-1.0010000467300415 -8.00100040435791,-1.0010000467300415 -8.00100040435791,-1.0010000467300415 C-8.00100040435791,-1.0010000467300415 -8.00100040435791,1.0010000467300415 -8.00100040435791,1.0010000467300415z M3.999000072479248,-0.9990000128746033 M3.999000072479248,1.0010000467300415 C3.999000072479248,1.0010000467300415 8.00100040435791,1.0010000467300415 8.00100040435791,1.0010000467300415 C8.00100040435791,1.0010000467300415 8.00100040435791,-1.0010000467300415 8.00100040435791,-1.0010000467300415 C8.00100040435791,-1.0010000467300415 3.999000072479248,-1.0010000467300415 3.999000072479248,-1.0010000467300415 C3.999000072479248,-1.0010000467300415 3.999000072479248,1.0010000467300415 3.999000072479248,1.0010000467300415z" />
+                            d=" M-8.00100040435791,1.0010000467300415 C-8.00100040435791,1.0010000467300415 0.9990000128746033,1.0010000467300415 0.9990000128746033,1.0010000467300415 C0.9990000128746033,1.0010000467300415 0.9990000128746033,-1.0010000467300415 0.9990000128746033,-1.0010000467300415 C0.9990000128746033,-1.0010000467300415 -8.00100040435791,-1.0010000467300415 -8.00100040435791,-1.0010000467300415 C-8.00100040435791,-1.0010000467300415 -8.00100040435791,1.0010000467300415 -8.00100040435791,1.0010000467300415z M3.999000072479248,-0.9990000128746033 M3.999000072479248,1.0010000467300415 C3.999000072479248,1.0010000467300415 8.00100040435791,1.0010000467300415 8.00100040435791,1.0010000467300415 C8.00100040435791,1.0010000467300415 8.00100040435791,-1.0010000467300415 8.00100040435791,-1.0010000467300415 C8.00100040435791,-1.0010000467300015 3.999000072479248,-1.0010000467300415 3.999000072479248,-1.0010000467300415 C3.999000072479248,-1.0010000467300415 3.999000072479248,1.0010000467300415 3.999000072479248,1.0010000467300415z" />
                         </g>
                       </g>
                     </g>
@@ -149,11 +184,12 @@ const Navbar = ({ handleOpen }) => {
 
       {/* ── MENU PANEL ── */}
       <div
-        className="menu-panel fixed hidden mobile:flex-col lg:flex-row sm:flex-col md:flex-row flex w-[100vw] h-[100vh] z-[101] overflow-hidden"
+        className="menu-panel fixed hidden menu-panel-wrapper w-screen h-screen z-[101] overflow-hidden"
+        style={{ flexDirection: 'row' }}
       >
         {/* LEFT — navigation links */}
         <div
-          className="left flex flex-col w-[50%] h-full"
+          className="menu-panel-left left flex flex-col w-1/2 h-full"
           style={{ backgroundColor: 'var(--menu-left-bg)', transition: 'background-color 0.4s ease' }}
         >
           {[
@@ -171,10 +207,10 @@ const Navbar = ({ handleOpen }) => {
               className="content uppercase group overflow-hidden relative"
               style={{ color: 'var(--menu-link-text)' }}
             >
-              <div className="overflow-hidden text-[1.2rem] ms-[2rem] relative z-[2]" style={{ color: 'var(--menu-link-number)' }}>
+              <div className="overflow-hidden text-[0.9rem] sm:text-[1.1rem] ms-[1.5rem] sm:ms-[2rem] relative z-[2]" style={{ color: 'var(--menu-link-number)' }}>
                 <p className="text">{num} - </p>
               </div>
-              <div className="overflow-hidden mt-4 text-[2.4rem] relative z-[2]" style={{ color: 'var(--menu-link-text)' }}>
+              <div className="overflow-hidden mt-2 sm:mt-4 text-[1.6rem] sm:text-[2rem] lg:text-[2.4rem] relative z-[2]" style={{ color: 'var(--menu-link-text)' }}>
                 <p className="text">{label}</p>
               </div>
 
@@ -193,12 +229,12 @@ const Navbar = ({ handleOpen }) => {
 
         {/* RIGHT — contact info + toggle */}
         <div
-          className="right w-[50%] h-full flex relative"
+          className="menu-panel-right right w-1/2 h-full flex relative"
           style={{ backgroundColor: 'var(--menu-right-bg)', transition: 'background-color 0.4s ease' }}
         >
           {/* Close button */}
           <div
-            className="close-menu absolute overflow-hidden flex gap-[1rem] items-center cursor-pointer top-10 right-10"
+            className="close-menu absolute overflow-hidden flex gap-[0.75rem] items-center cursor-pointer top-6 right-6 sm:top-10 sm:right-10"
             onClick={closeMenu}
           >
             <div className="cross text">
@@ -227,23 +263,23 @@ const Navbar = ({ handleOpen }) => {
               </svg>
             </div>
             <div className="overflow-hidden">
-              <p className="text" style={{ color: 'var(--text-secondary)' }}>close</p>
+              <p className="text text-sm sm:text-base" style={{ color: 'rgba(255,255,255,0.88)' }}>close</p>
             </div>
           </div>
 
           {/* Main right content */}
-          <div className="w-full h-full mb-10 pt-5 flex flex-col items-center justify-between">
+          <div className="w-full h-full mb-6 pt-5 flex flex-col items-center justify-between overflow-y-auto">
 
-            {/* Logo */}
-            <div className="w-[250px] h-auto mobile:hidden sm:hidden lg:flex md:flex justify-center items-center">
-              <img src={TransLogo} className="w-full h-auto object-contain" alt="Sunrise Crest" />
+            {/* Logo — always white on dark bg */}
+            <div className="w-[180px] sm:w-[220px] lg:w-[260px] h-auto hidden sm:flex justify-center items-center mt-16 sm:mt-4">
+              <img src={TransLogo} className="logo-on-dark w-full h-auto object-contain" alt="Sunrise Crest" />
             </div>
 
             {/* ── THEME TOGGLE ── */}
-            <div className="flex flex-col items-center gap-3 mt-4">
+            <div className="flex flex-col items-center gap-2 mt-4">
               <div className="theme-toggle-container">
                 {/* Sun icon */}
-                <span style={{ fontSize: '14px', color: isDark ? 'rgba(255,255,255,0.4)' : '#C9A84C', transition: 'color 0.3s' }}>☀️</span>
+                <SunIcon className={`theme-toggle-icon ${!isDark ? 'theme-toggle-icon--active' : 'theme-toggle-icon--inactive'}`} />
 
                 {/* Toggle */}
                 <label className="theme-toggle-switch" title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
@@ -254,50 +290,51 @@ const Navbar = ({ handleOpen }) => {
                     aria-label="Toggle theme"
                   />
                   <div className="theme-toggle-track" />
-                  <div className="theme-toggle-thumb">
-                    {!isDark ? '☀' : '🌙'}
-                  </div>
+                  <div className="theme-toggle-thumb" />
                 </label>
 
                 {/* Moon icon */}
-                <span style={{ fontSize: '14px', color: isDark ? 'rgba(201,168,76,0.9)' : 'rgba(255,255,255,0.3)', transition: 'color 0.3s' }}>🌙</span>
+                <MoonIcon className={`theme-toggle-icon ${isDark ? 'theme-toggle-icon--active' : 'theme-toggle-icon--inactive'}`} />
               </div>
               <span className="theme-toggle-label">{isDark ? 'Dark Mode' : 'Light Mode'}</span>
             </div>
 
             {/* Contact details */}
-            <div style={{ color: 'rgba(255,255,255,0.88)', '--cool-link-color': '#fff', '--cool-link-underline': 'var(--accent)' }} className="ps-2 pe-2 w-full flex gap-[5rem] justify-center">
-              <div className="flex flex-col gap-8">
+            <div
+              style={{ color: 'rgba(255,255,255,0.88)', '--cool-link-color': '#fff', '--cool-link-underline': 'rgba(255,255,255,0.5)' }}
+              className="px-3 sm:px-2 w-full flex flex-col sm:flex-row gap-8 sm:gap-[3rem] lg:gap-[5rem] justify-center mt-4"
+            >
+              <div className="flex flex-col gap-5 sm:gap-8">
                 <div className="overflow-hidden">
-                  <p className="text-[1.5rem] text uppercase" style={{ color: 'var(--menu-contact-title)' }}>Email</p>
-                  <p className="cool-link text">poorvang.shukls@gmail.com</p>
+                  <p className="text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] text uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Email</p>
+                  <p className="cool-link text text-sm sm:text-base">poorvang.shukls@gmail.com</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text text-[1.5rem] uppercase" style={{ color: 'var(--menu-contact-title)' }}>Phone</p>
-                  <p className="text cool-link">+91 7016302635</p>
+                  <p className="text text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Phone</p>
+                  <p className="text cool-link text-sm sm:text-base">+91 7016302635</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text text-[1.5rem] uppercase mb-2" style={{ color: 'var(--menu-contact-title)' }}>Social</p>
+                  <p className="text text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>Social</p>
                   <div className="flex flex-col">
-                    <a href="" className="overflow-hidden"><p className="cool-link text">Instagram</p></a>
-                    <a href="" className="overflow-hidden"><p className="cool-link text">Facebook</p></a>
-                    <a href="" className="overflow-hidden"><p className="cool-link text">Twitter</p></a>
+                    <a href="" className="overflow-hidden"><p className="cool-link text text-sm sm:text-base">Instagram</p></a>
+                    <a href="" className="overflow-hidden"><p className="cool-link text text-sm sm:text-base">Facebook</p></a>
+                    <a href="" className="overflow-hidden"><p className="cool-link text text-sm sm:text-base">Twitter</p></a>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-5 sm:gap-8">
                 <div className="overflow-hidden">
-                  <p className="text text-[1.5rem] uppercase" style={{ color: 'var(--menu-contact-title)' }}>Office</p>
-                  <p className="text cool-link">1-1-2 Oshiage, Sumida City, <br /> 131-0045, Tokyo, Japan</p>
+                  <p className="text text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Office</p>
+                  <p className="text cool-link text-sm sm:text-base">1-1-2 Oshiage, Sumida City, <br /> 131-0045, Tokyo, Japan</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text text-[1.5rem] uppercase" style={{ color: 'var(--menu-contact-title)' }}>Appointment</p>
-                  <p className="text cool-link">+91 7016302635</p>
+                  <p className="text text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Appointment</p>
+                  <p className="text cool-link text-sm sm:text-base">+91 7016302635</p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-[1.5rem] text uppercase mb-2" style={{ color: 'var(--menu-contact-title)' }}>Legal</p>
+                  <p className="text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] text uppercase mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>Legal</p>
                   <div className="flex flex-col">
-                    <a href="" className="overflow-hidden"><p className="cool-link text">Terms and Condition</p></a>
+                    <a href="" className="overflow-hidden"><p className="cool-link text text-sm sm:text-base">Terms and Condition</p></a>
                   </div>
                 </div>
               </div>
@@ -305,12 +342,12 @@ const Navbar = ({ handleOpen }) => {
 
             {/* Bottom bar */}
             <div
-              className="flex justify-between w-full pt-2 pb-2 items-center text-[0.8rem] relative"
-              style={{ color: 'rgba(255,255,255,0.88)', '--cool-link-color': '#fff', '--cool-link-underline': 'var(--accent)' }}
+              className="flex justify-between w-full pt-2 pb-2 items-center text-[0.7rem] sm:text-[0.8rem] relative mt-4"
+              style={{ color: 'rgba(255,255,255,0.88)', '--cool-link-color': '#fff', '--cool-link-underline': 'rgba(255,255,255,0.5)' }}
             >
-              <div className="w-full h-[1px] line absolute top-0" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} />
-              <p className="ms-10">© 2024 Sunrise Crest, All rights reserved</p>
-              <a href=""><p className="me-10 cool-link">Privacy policy</p></a>
+              <div className="w-full h-[1px] line absolute top-0" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
+              <p className="ms-6 sm:ms-10">© 2024 Sunrise Crest, All rights reserved</p>
+              <a href=""><p className="me-6 sm:me-10 cool-link">Privacy policy</p></a>
             </div>
           </div>
         </div>

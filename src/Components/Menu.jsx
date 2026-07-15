@@ -155,8 +155,8 @@ const Menu = forwardRef((props, ref) => {
   // if (!isOpen) return null; // Don't render the panel if it's closed
 
   return (
-    <div className="fixed mobile:flex-col lg:flex-row sm:flex-col md:flex-row flex w-[100vw] h-[100vh] z-[101] overflow-hidden ">
-      <div className="left flex flex-col w-[50%] h-full bg-[#f0f4ef]">
+    <div className="fixed flex flex-col md:flex-row w-screen h-screen z-[101] overflow-hidden overflow-y-auto">
+      <div className="left flex flex-col w-full md:w-[50%] min-h-[55vh] md:h-full" style={{ backgroundColor: 'var(--menu-left-bg)' }}>
         <a
           href=""
           className=" text-textGray content uppercase group overflow-hidden "
@@ -238,7 +238,7 @@ const Menu = forwardRef((props, ref) => {
           <div className="absolute bottom-0 w-0 h-[2px] bg-[#fff] group-hover:w-full transition-all duration-[1000ms] "></div>
         </a>
       </div>
-      <div className="right w-[50%] h-full flex relative bg-[#212529] ">
+      <div className="right w-full md:w-[50%] min-h-[45vh] md:h-full flex relative" style={{ backgroundColor: '#212529' }}>
         <div
           className="close-menu absolute overflow-hidden flex gap-[1rem] items-center cursor-pointer top-10 right-10"
           onClick={closeMenu}
@@ -350,11 +350,11 @@ const Menu = forwardRef((props, ref) => {
         </div>
 
         <div className="w-full h-full mb-10 pt-5  flex flex-col gap-[5rem] items-center justify-between">
-          <div className="w-[300px] h-[300px] mobile:hidden sm:hidden lg:block md:block   border-[1px] border-[#fff] p-10 rounded-full ">
+          <div className="hidden md:block w-[220px] h-[220px] lg:w-[280px] lg:h-[280px] border-[1px] border-[rgba(255,255,255,0.3)] p-8 rounded-full">
             <img
               src={TransLogo}
-              className="w-full h-full object-cover"
-              alt=""
+              className="logo-on-dark w-full h-full object-contain"
+              alt="Sunrise Crest"
             />
           </div>
 

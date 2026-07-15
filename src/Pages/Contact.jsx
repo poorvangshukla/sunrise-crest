@@ -62,7 +62,7 @@ const Contact = () => {
 
   return (
     <div
-      className="min-h-screen pt-32 pb-20"
+      className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-20"
       style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', transition: 'background-color 0.4s ease, color 0.4s ease' }}
     >
       <SEO
@@ -73,17 +73,17 @@ const Contact = () => {
       {/* Hero */}
       <section className="px-4 mb-20">
         <div ref={heroRef} className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">Get In Touch</h1>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Get In Touch</h1>
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-muted)' }}>
             Ready to start trading? Have questions? We're here to help.
           </p>
         </div>
       </section>
 
       {/* Content */}
-      <div className="px-4">
+      <div className="px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
             {/* Info */}
             <div>
               <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
@@ -126,7 +126,7 @@ const Contact = () => {
             </div>
 
             {/* Form */}
-            <div className="p-8" style={{ border: '1px solid var(--border)', transition: 'border-color 0.4s ease' }}>
+            <div className="p-5 sm:p-8" style={{ border: '1px solid var(--border)', transition: 'border-color 0.4s ease' }}>
               <h2 className="text-3xl font-bold mb-8">Send Us a Message</h2>
 
               {submitStatus === 'success' && (

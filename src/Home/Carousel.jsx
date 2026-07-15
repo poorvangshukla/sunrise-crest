@@ -68,7 +68,7 @@ const ImageCarousel = () => {
                 }`}
               style={{ color: 'var(--text-secondary)' }}
             >
-              <p className="kmoIMz mb-3" style={{ lineHeight: "0.9rem" }}>
+              <p className="kmoIMz mb-3 text-[10px] sm:text-[13px]" style={{ lineHeight: "0.9rem" }}>
                 {item.content}
               </p>
 
@@ -103,7 +103,7 @@ const ImageCarousel = () => {
       </div>
 
       <button
-        className="absolute top-1/2 left-4 -translate-y-1/2"
+        className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 w-10 h-10 sm:w-auto sm:h-auto flex items-center justify-center rounded-full bg-black/20 sm:bg-transparent hover:bg-black/30 transition-colors"
         style={{ color: 'var(--text-muted)' }}
         onClick={() =>
           setCurrentIndex(
@@ -115,7 +115,7 @@ const ImageCarousel = () => {
       </button>
 
       <button
-        className="absolute top-1/2 right-4 -translate-y-1/2"
+        className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 w-10 h-10 sm:w-auto sm:h-auto flex items-center justify-center rounded-full bg-black/20 sm:bg-transparent hover:bg-black/30 transition-colors"
         style={{ color: 'var(--text-muted)' }}
         onClick={() =>
           setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselArray.length)

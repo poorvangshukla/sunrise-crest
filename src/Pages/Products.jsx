@@ -25,7 +25,7 @@ const Products = () => {
 
   return (
     <div
-      className="min-h-screen pt-32 pb-20"
+      className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-20"
       style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', transition: 'background-color 0.4s ease, color 0.4s ease' }}
     >
       <SEO
@@ -37,8 +37,8 @@ const Products = () => {
       {/* Hero */}
       <section className="px-4 mb-20">
         <div ref={heroRef} className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">Our Products</h1>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Our Products</h1>
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-muted)' }}>
             Premium quality food products sourced from the finest producers worldwide
           </p>
         </div>
@@ -89,7 +89,7 @@ const Products = () => {
               >
                 {/* Product Image */}
                 <div
-                  className="h-64 flex items-center justify-center relative overflow-hidden"
+                  className="h-48 sm:h-56 lg:h-64 flex items-center justify-center relative overflow-hidden"
                   style={{ backgroundColor: 'var(--product-img-bg)' }}
                   role="img"
                   aria-label={`${product.name} product image`}
@@ -145,9 +145,9 @@ const Products = () => {
       </div>
 
       {/* CTA */}
-      <section className="px-4 mt-32">
-        <div className="max-w-4xl mx-auto text-center p-12" style={{ border: '1px solid var(--border)' }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Don't See What You Need?</h2>
+      <section className="px-4 sm:px-6 mt-16 sm:mt-24 lg:mt-32 mb-8">
+        <div className="max-w-4xl mx-auto text-center p-8 sm:p-12" style={{ border: '1px solid var(--border)' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Don't See What You Need?</h2>
           <p className="mb-8" style={{ color: 'var(--text-muted)' }}>
             We source a wide variety of products. Contact us for custom requirements.
           </p>

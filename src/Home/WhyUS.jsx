@@ -29,25 +29,44 @@ const data = [
 
 const WhyUS = () => {
   return (
-    <div className="mt-[12rem]" style={{ backgroundColor: 'var(--bg-primary)', transition: 'background-color 0.4s ease' }}>
-      <div className="flex w-[100vw] items-center flex-col">
-        <p className="uppercase text-[2rem]" style={{ color: 'var(--text-secondary)' }}>Why Choose Us!</p>
-        <p className="capitalize text-[1.5rem]" style={{ color: 'var(--text-secondary)' }}>Our Strengths</p>
+    <div
+      className="mt-[6rem] sm:mt-[8rem] lg:mt-[12rem] pb-10"
+      style={{ backgroundColor: 'var(--bg-primary)', transition: 'background-color 0.4s ease' }}
+    >
+      <div className="flex w-full items-center flex-col gap-2 mb-8 sm:mb-12 px-4">
+        <p
+          className="uppercase text-[1.5rem] sm:text-[2rem] lg:text-[2.2rem] text-center"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          Why Choose Us!
+        </p>
+        <p
+          className="capitalize text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] text-center"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          Our Strengths
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 ms-10 me-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 mx-4 sm:mx-8 lg:mx-10">
         {data.map((item, i) => (
           <div
             key={i}
-            className="h-[200px] sm:h-[250px] mobile:h-[300px] ps-5 pe-5 transition-all duration-300"
+            className="card-auto-height p-5 sm:p-6 transition-all duration-300"
             style={{ backgroundColor: 'var(--bg-card)', border: '1px solid transparent' }}
             onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--border)'}
             onMouseLeave={e => e.currentTarget.style.borderColor = 'transparent'}
           >
-            <p className="tracking-tight text-[1.2rem] mt-2" style={{ color: 'var(--text-secondary)' }}>
+            <p
+              className="tracking-tight text-[1rem] sm:text-[1.1rem] lg:text-[1.2rem] mt-2 mb-3"
+              style={{ color: 'var(--text-secondary)' }}
+            >
               {item.title}
             </p>
-            <p className="tracking-tight mt-2" style={{ color: 'var(--text-muted)' }}>
+            <p
+              className="tracking-tight text-sm sm:text-[0.95rem] leading-relaxed"
+              style={{ color: 'var(--text-muted)' }}
+            >
               {item.content}
             </p>
           </div>
