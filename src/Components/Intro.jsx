@@ -132,7 +132,7 @@ const Intro = ({ isLoading }) => {
           <div className="absolute logo w-[300px] z-[2] h-auto flex items-center justify-center">
             <img
               src={Logo}
-              className="w-full h-auto object-contain"
+              className="logo-on-dark w-full h-auto object-contain"
               alt="Sunrise Crest Logo"
             />
           </div>

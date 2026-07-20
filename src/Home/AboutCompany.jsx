@@ -10,7 +10,7 @@ const AboutCompany = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 lg:grid-rows-5 gap-2 w-full h-auto lg:h-[100vh]">
         {/* About text — top-left large block */}
         <div
-          className="sm:col-span-2 lg:col-span-5 lg:row-span-3 relative pt-6 sm:pt-10 px-5 sm:px-10 shadow-md shadow-black transition-colors duration-400 min-h-[260px]"
+          className="about-text-section sm:col-span-2 lg:col-span-5 lg:row-span-3 relative pt-6 sm:pt-10 px-5 sm:px-10 shadow-md shadow-black transition-colors duration-400 min-h-[260px]"
           style={{ backgroundColor: 'var(--bg-secondary)' }}
         >
           <p

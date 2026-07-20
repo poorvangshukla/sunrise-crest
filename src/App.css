@@ -7,7 +7,7 @@
    ============================================= */
 
 :root {
-  /* Dark theme (default) */
+  /* ── Dark theme (default) ── */
   --bg-primary: #0F1011;
   --bg-secondary: #151617;
   --bg-card: #1D1E1F;
@@ -48,60 +48,78 @@
   --cool-link-underline: #fff;
   --navbar-icon-fill: rgb(255,255,255,0.88);
   --navbar-border: rgba(255,255,255,0.1);
+  --navbar-bg: rgba(15, 16, 17, 0.92);
+
+  /* Logo: no filter in dark mode (logo shows as its natural white) */
   --logo-filter: none;
 }
 
+/* ── Light theme — Warm Luxury Editorial ── */
 [data-theme="light"] {
-  /* Premium light theme — clean luxury editorial */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F5F5F3;
-  --bg-card: #FAFAFA;
-  --bg-card-hover: #F0EFED;
-  --text-primary: #0D0D0D;
-  --text-secondary: #1A1A1A;
-  --text-muted: #6E6E6E;
-  --border: #E2E2E0;
-  --border-hover: #B8924A;
-  --accent: #B8924A;
+  /* Backgrounds: warm parchment, not cold white */
+  --bg-primary: #F7F5F0;
+  --bg-secondary: #EDEBE5;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F9F8F5;
+
+  /* Typography: near-black with warm undertone */
+  --text-primary: #111010;
+  --text-secondary: #1C1B1A;
+  --text-muted: #6B6660;
+
+  /* Borders: warm stone */
+  --border: #DAD6CE;
+  --border-hover: #9E7A38;
+
+  /* Accent: deep saturated gold — more visible than light gold */
+  --accent: #9E7A38;
   --accent-text: #FFFFFF;
 
-  /* Menu stays dark on the right — keep its own vars */
-  --menu-left-bg: #FFFFFF;
-  --menu-right-bg: #1A1A1A;
-  --menu-link-number: #9E9E9E;
-  --menu-link-text: #2A2A2A;
-  --menu-link-hover-bg: rgba(184, 146, 74, 0.12);
-  --menu-link-underline: #B8924A;
-  --menu-line-color: #E2E2E0;
-  --menu-contact-title: rgba(255,255,255,0.8);
+  /* Menu */
+  --menu-left-bg: #F7F5F0;
+  --menu-right-bg: #1A1918;
+  --menu-link-number: #9A9590;
+  --menu-link-text: #1C1B1A;
+  --menu-link-hover-bg: rgba(158, 122, 56, 0.08);
+  --menu-link-underline: #9E7A38;
+  --menu-line-color: #DAD6CE;
+  --menu-contact-title: rgba(255,255,255,0.82);
 
-  --shadow-gradient-start: rgb(255, 255, 255);
-  --shadow-gradient-mid: rgba(255, 255, 255, 0.8);
-  --shadow-gradient-end: rgba(255, 255, 255, 0);
+  /* Shadow overlays: fade to warm base, not cold white */
+  --shadow-gradient-start: rgb(247, 245, 240);
+  --shadow-gradient-mid: rgba(247, 245, 240, 0.8);
+  --shadow-gradient-end: rgba(247, 245, 240, 0);
 
-  --product-img-bg: #F0EFED;
-  --product-img-gradient-from: #E5E3DF;
-  --product-img-gradient-to: #F0EFED;
+  /* Products */
+  --product-img-bg: #EDEBE5;
+  --product-img-gradient-from: #E3E0D9;
+  --product-img-gradient-to: #EDEBE5;
 
-  --step-active-bg: #B8924A;
+  /* Quote */
+  --step-active-bg: #9E7A38;
   --step-active-text: #FFFFFF;
-  --step-inactive-border: #E2E2E0;
-  --quote-summary-bg: #F5F5F3;
+  --step-inactive-border: #DAD6CE;
+  --quote-summary-bg: #EDEBE5;
 
-  --toggle-track-off: #E2E2E0;
-  --toggle-track-on: #B8924A;
+  /* Toggle */
+  --toggle-track-off: #DAD6CE;
+  --toggle-track-on: #9E7A38;
   --toggle-thumb: #FFFFFF;
-  --toggle-thumb-shadow: rgba(0,0,0,0.15);
-  --toggle-label: rgba(13,13,13,0.45);
-  --toggle-icon-active: #B8924A;
-  --toggle-icon-inactive: #BBBBBB;
+  --toggle-thumb-shadow: rgba(0,0,0,0.12);
+  --toggle-label: rgba(17,16,16,0.4);
+  --toggle-icon-active: #9E7A38;
+  --toggle-icon-inactive: #BBBAB7;
 
-  --cool-link-color: #0D0D0D;
-  --cool-link-underline: #B8924A;
-  --navbar-icon-fill: rgb(13,13,13,0.88);
-  --navbar-border: rgba(0,0,0,0.1);
+  /* Links */
+  --cool-link-color: #111010;
+  --cool-link-underline: #9E7A38;
 
-  /* Logo becomes dark in light mode */
+  /* Navbar */
+  --navbar-icon-fill: rgb(17,16,16,0.88);
+  --navbar-border: rgba(0,0,0,0.08);
+  --navbar-bg: rgba(247, 245, 240, 0.94);
+
+  /* Logo: brightness(0) makes any logo full-black in light mode */
   --logo-filter: brightness(0);
 }
 
@@ -131,16 +149,19 @@ a {
    LOGO — THEME-ADAPTIVE
    ============================================= */
 
-/* Logo that adapts: white in dark mode, dark in light mode */
+/* Applies the correct logo color for the current theme.
+   Dark mode: no filter (logo shows as original — white/light)
+   Light mode: brightness(0) makes it black */
 .logo-themed {
   filter: var(--logo-filter);
-  transition: filter 0.4s ease;
+  transition: filter 0.45s ease;
 }
 
-/* Logo on permanently dark backgrounds (menu right panel) — always white */
+/* Logo on a permanently dark background (e.g. menu right panel)
+   Always white regardless of site theme */
 .logo-on-dark {
   filter: brightness(0) invert(1);
-  transition: filter 0.4s ease;
+  transition: filter 0.45s ease;
 }
 
 /* =============================================
@@ -161,7 +182,7 @@ a {
   width: 0;
   height: 1px;
   background: var(--cool-link-underline);
-  transition: width 0.3s, background 0.4s ease;
+  transition: width 0.3s ease, background 0.4s ease;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -187,7 +208,7 @@ a {
 }
 
 /* =============================================
-   SHADOW OVERLAYS (use CSS vars for theme)
+   SHADOW OVERLAYS (theme-aware via CSS vars)
    ============================================= */
 
 .upperShadow {
@@ -236,7 +257,7 @@ a {
 }
 
 /* =============================================
-   TYPOGRAPHY
+   TYPOGRAPHY UTILITY
    ============================================= */
 
 .kmoIMz {
@@ -323,18 +344,17 @@ a {
   inset: 0;
   background: var(--toggle-track-off);
   border-radius: 9999px;
-  transition: background 0.35s ease, box-shadow 0.35s ease;
+  transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   border: 1px solid var(--border);
 }
 
 .theme-toggle-switch input:checked + .theme-toggle-track {
   background: var(--toggle-track-on);
   border-color: var(--accent);
-  box-shadow: 0 0 10px rgba(184,146,74,0.3);
 }
 
-[data-theme="dark"] .theme-toggle-switch input:checked + .theme-toggle-track {
-  box-shadow: none;
+[data-theme="light"] .theme-toggle-switch input:checked + .theme-toggle-track {
+  box-shadow: 0 0 12px rgba(158, 122, 56, 0.25);
 }
 
 .theme-toggle-thumb {
@@ -357,7 +377,19 @@ a {
    NAVBAR
    ============================================= */
 
-/* Responsive navbar override */
+.nav {
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--navbar-border);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ─── LIGHT THEME: Navbar warm tint & refined border ─── */
+[data-theme="light"] .nav {
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
 @media (max-width: 640px) {
   .nav {
     padding-left: 1rem !important;
@@ -366,42 +398,170 @@ a {
 }
 
 /* =============================================
-   MENU PANEL — MOBILE RESPONSIVE
+   MENU PANEL — RESPONSIVE
    ============================================= */
 
-/* On small screens, both panels take full width and stack */
+.menu-panel-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 768px) {
-  .menu-panel-left {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 55vh;
-  }
-  .menu-panel-right {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 45vh;
-  }
   .menu-panel-wrapper {
     flex-direction: column !important;
     overflow-y: auto;
-    height: 100vh;
+  }
+  .menu-panel-left {
+    width: 100% !important;
+    min-height: 55vh;
+    height: auto !important;
+  }
+  .menu-panel-right {
+    width: 100% !important;
+    min-height: 45vh;
+    height: auto !important;
   }
 }
 
+/* ─── LIGHT THEME: Menu left panel — warm, not blank white ─── */
+[data-theme="light"] .menu-panel-left {
+  background-color: var(--menu-left-bg) !important;
+  border-right: 1px solid var(--border);
+}
+
 /* =============================================
-   BANNER MARQUEE
+   MARQUEE BANNER
    ============================================= */
 
-@media (max-width: 640px) {
-  .marquee-text {
-    font-size: 1rem !important;
-    margin-left: 1.5rem !important;
-    margin-right: 1.5rem !important;
-  }
+.marquee-wrapper {
+  background-color: var(--bg-card);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ─── LIGHT THEME: Marquee gets warm bg + top/bottom accent lines ─── */
+[data-theme="light"] .marquee-wrapper {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+[data-theme="light"] .marquee-wrapper::before,
+[data-theme="light"] .marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.4;
+}
+
+[data-theme="light"] .marquee-wrapper::before {
+  top: 0;
+}
+
+[data-theme="light"] .marquee-wrapper::after {
+  bottom: 0;
 }
 
 /* =============================================
-   CURSOR & INTERACTION FIXES
+   WHY-US CARDS
+   ============================================= */
+
+.why-card {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.4s ease;
+}
+
+/* ─── LIGHT THEME: Cards have elevation (depth on warm base) ─── */
+[data-theme="light"] .why-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] .why-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.09) !important;
+  border-color: #DAD6CE !important;
+  border-left: 3px solid var(--accent) !important;
+}
+
+/* =============================================
+   EXPLORE BOX — Product Cards
+   ============================================= */
+
+/* ─── LIGHT THEME: Product info section visible border ─── */
+[data-theme="light"] .product-info-section {
+  border-left-color: #C5C1BA !important;
+}
+
+/* ─── LIGHT THEME: Image hover overlay ─── */
+[data-theme="light"] .product-image-hover:hover {
+  opacity: 0.85;
+}
+
+/* =============================================
+   ABOUT COMPANY — Light mode text section
+   ============================================= */
+
+[data-theme="light"] .about-text-section {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+}
+
+/* =============================================
+   SECTION HEADINGS — Light mode gold accent rule
+   ============================================= */
+
+[data-theme="light"] .section-heading-accent::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+  opacity: 0.7;
+}
+
+/* =============================================
+   CARDS & BORDERS
+   ============================================= */
+
+/* ─── LIGHT THEME: Card hover — warm lift ─── */
+[data-theme="light"] .card-hover-lift {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+[data-theme="light"] .card-hover-lift:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+/* ─── LIGHT THEME: Blog/Quote/Contact form border ─── */
+[data-theme="light"] .form-panel {
+  background: #FFFFFF;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+/* =============================================
+   PRODUCT PAGE — Light mode gradient
+   ============================================= */
+
+[data-theme="light"] .product-emoji-bg {
+  background: linear-gradient(135deg, var(--product-img-gradient-from) 0%, var(--product-img-gradient-to) 100%);
+}
+
+/* =============================================
+   CARD HEIGHT FIX
+   ============================================= */
+
+.card-auto-height {
+  height: auto;
+  min-height: 200px;
+}
+
+/* =============================================
+   CURSOR & INPUT
    ============================================= */
 
 input,
@@ -425,23 +585,6 @@ select {
    FOCUS STYLES (ACCESSIBILITY)
    ============================================= */
 
-input:focus,
-textarea:focus,
-select:focus,
-button:focus,
-a:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-input:focus:not(:focus-visible),
-textarea:focus:not(:focus-visible),
-select:focus:not(:focus-visible),
-button:focus:not(:focus-visible),
-a:focus:not(:focus-visible) {
-  outline: none;
-}
-
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
@@ -462,21 +605,6 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--accent);
-  color: var(--accent-text);
-  padding: 8px;
-  text-decoration: none;
-  z-index: 100;
-}
-
-.skip-to-content:focus {
-  top: 0;
 }
 
 /* =============================================
@@ -504,13 +632,20 @@ body {
 }
 
 /* =============================================
-   CARD HEIGHT RESPONSIVE FIX
+   MARQUEE BANNER TEXT RESPONSIVE
    ============================================= */
 
-.card-auto-height {
-  height: auto;
-  min-height: 200px;
+@media (max-width: 640px) {
+  .marquee-text {
+    font-size: 1rem !important;
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
 }
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -1,10 +1,4 @@
-.nav {
-    border-bottom: 1px solid var(--navbar-border, rgba(255,255,255,0.1));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: var(--bg-primary);
-    transition: background-color 0.4s ease, border-color 0.4s ease;
-}
+/* nav styles moved to App.css for theme-awareness */
 
 .nav .menu {
     display: flex;
@@ -114,28 +108,5 @@
 @media (min-width: 640px) {
   .nav .menu h3 {
     font-size: 12px;
-  }
-}
-
-/* ── MENU PANEL RESPONSIVE ── */
-.menu-panel-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (max-width: 768px) {
-  .menu-panel-wrapper {
-    flex-direction: column !important;
-    overflow-y: auto;
-  }
-  .menu-panel-left {
-    width: 100% !important;
-    min-height: 55vh;
-    height: auto !important;
-  }
-  .menu-panel-right {
-    width: 100% !important;
-    min-height: 45vh;
-    height: auto !important;
   }
 }

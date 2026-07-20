@@ -8,8 +8,7 @@ const Banner = () => {
 
   return (
     <div
-      className="overflow-hidden group mb-6 sm:mb-10 transition-colors duration-400"
-      style={{ backgroundColor: 'var(--bg-card)' }}
+      className="marquee-wrapper overflow-hidden group mb-6 sm:mb-10"
     >
       <div className="relative flex w-full">
         <div className="wrapper animate-marquee group-hover:animation-pause flex items-center whitespace-nowrap py-4 sm:py-5">

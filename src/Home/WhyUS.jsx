@@ -52,10 +52,8 @@ const WhyUS = () => {
         {data.map((item, i) => (
           <div
             key={i}
-            className="card-auto-height p-5 sm:p-6 transition-all duration-300"
+            className="why-card card-auto-height p-5 sm:p-6"
             style={{ backgroundColor: 'var(--bg-card)', border: '1px solid transparent' }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--border)'}
-            onMouseLeave={e => e.currentTarget.style.borderColor = 'transparent'}
           >
             <p
               className="tracking-tight text-[1rem] sm:text-[1.1rem] lg:text-[1.2rem] mt-2 mb-3"

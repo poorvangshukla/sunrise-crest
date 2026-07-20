@@ -23,11 +23,11 @@ const ExploreBox = () => {
             <img
               src={product.ImgSrc}
               alt={product.title}
-              className="w-full h-full object-cover opacity-100 transition-transform duration-400 transform hover:opacity-70 hover:scale-105"
+              className="product-image-hover w-full h-full object-cover opacity-100 transition-transform duration-400 transform hover:opacity-70 hover:scale-105"
             />
           </div>
           <section
-            className="min-h-[100px] border-l-[0.5px] transition-colors duration-400 pb-4"
+            className="product-info-section min-h-[100px] border-l-[0.5px] transition-colors duration-400 pb-4"
             style={{ borderColor: 'var(--border)' }}
           >
             <div
