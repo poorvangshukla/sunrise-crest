@@ -29,9 +29,9 @@ const Products = () => {
       style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', transition: 'background-color 0.4s ease, color 0.4s ease' }}
     >
       <SEO
-        title="Our Products | Premium Food Trading | Sunrise Crest"
-        description="Browse our selection of premium spices, grains, nuts, and specialty food products sourced from the finest producers worldwide. Request a quote today."
-        keywords="premium spices, basmati rice, cashew nuts, food products, organic spices, quality grains"
+        title="Our Products | Sunrise Crest"
+        description="Browse our selection of premium food products and industrial pipe accessories sourced from the finest producers worldwide. Request a quote today."
+        keywords="premium spices, basmati rice, cashew nuts, pipe accessories, pump guard, bottom adapter, split clamp"
       />
 
       {/* Hero */}
@@ -39,7 +39,7 @@ const Products = () => {
         <div ref={heroRef} className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">Our Products</h1>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-            Premium quality food products sourced from the finest producers worldwide
+            Premium food products &amp; industrial pipe accessories — sourced from the finest producers worldwide
           </p>
         </div>
       </section>
@@ -94,16 +94,27 @@ const Products = () => {
                   role="img"
                   aria-label={`${product.name} product image`}
                 >
-                  <div
-                    className="absolute inset-0 group-hover:scale-110 transition-transform duration-500"
-                    style={{ background: `linear-gradient(to bottom right, var(--product-img-gradient-from), var(--product-img-gradient-to))` }}
-                  />
-                  <span className="text-6xl relative z-10 opacity-30 group-hover:opacity-50 transition-opacity">
-                    {product.category === 'Grains' && '🌾'}
-                    {product.category === 'Spices' && '🌶️'}
-                    {product.category === 'Nuts' && '🥜'}
-                    {product.category === 'Dried Fruits' && '🍇'}
-                  </span>
+                  {product.image ? (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <>
+                      <div
+                        className="absolute inset-0 group-hover:scale-110 transition-transform duration-500"
+                        style={{ background: `linear-gradient(to bottom right, var(--product-img-gradient-from), var(--product-img-gradient-to))` }}
+                      />
+                      <span className="text-6xl relative z-10 opacity-30 group-hover:opacity-50 transition-opacity">
+                        {product.category === 'Grains' && '🌾'}
+                        {product.category === 'Spices' && '🌶️'}
+                        {product.category === 'Nuts' && '🥜'}
+                        {product.category === 'Dried Fruits' && '🍇'}
+                        {product.category === 'Pipe Accessories' && '🔩'}
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 {/* Product Info */}
